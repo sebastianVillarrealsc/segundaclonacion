@@ -1,16 +1,21 @@
 import React from "react";
+import "../hojas-de-estilo/Testimonio.css";
 
-function Testimonios(){
+function Testimonios(props) {
     return(
     
 <div className="contenedor-testimonio">
     <img className="imagen-testimonio"
-    src={require("../imagenes/foto3.png")}
+    src={require(`../imagenes/testimonio-${props.imagen}.png`)}
     alt="fotografia"/>
     <div className="contenedor-texto-testimonio">
-        <p className="nombre-testimonio">Emma Bostian en Suecia</p>
-        <p className="cargo-testimonio">ingeniera de software en spotify</p>
-        <p className="texto-testimonio">esto es una prueba de react basada en un curso de freCodeCamp es diferente a lo que nos mostro Marcelo , la diferencia mayor esta en la inicializacion y en la manera de hacer correr el proyecto ,voy a tratar de preguntar cual es la mas adecuada me parece que seria la de la carrera </p>
+        <p className="nombre-testimonio">
+           <strong> {props.nombre} </strong>en{props.pais}
+             </p>
+        <p className="cargo-testimonio">
+            {props.cargo} en <strong>{props.empresa}</strong>
+             </p>
+        <p className="texto-testimonio">{props.testimonio} </p>
     </div>
 </div>
     );
